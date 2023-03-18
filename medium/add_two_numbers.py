@@ -33,6 +33,7 @@ class Solution:
 
         if not (l1) and not (l2):
             return None
+
         if not l1:
             left_val = 0
             left_node = None
@@ -47,10 +48,7 @@ class Solution:
             right_node = l2.next
 
         total = right_val + left_val
-        # if we ran out of values to add (end of linked list)
-        if total == 0:
-            return ret_node
-        elif total < 10:
+        if total < 10:
             ret_node.val = total
         else:
             ret_node.val = total - 10
@@ -70,13 +68,6 @@ if __name__ == "__main__":
 
     l1 = ListNode(2, ListNode(4, ListNode(3)))
     l2 = ListNode(5, ListNode(6, ListNode(4)))
-    # l1= ListNode(0)
-    # l2 = ListNode(0)
-
-    # l1 = ListNode(9, ListNode(9, ListNode(9, ListNode(9))))
-    # l2 = ListNode(9, ListNode(9, ListNode(
-    #     9, ListNode(9, ListNode(9, ListNode(9, ListNode(9)))))))
-    # solution [8,9,9,9,0,0,0,1]
 
     ans = s.addTwoNumbers(l1=l1, l2=l2)
 
