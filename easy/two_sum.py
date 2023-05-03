@@ -11,7 +11,7 @@ Constraints
 -109 <= target <= 109
 """
 
-from typing import List
+from typing import List, defaultdict
 
 
 class Solution:
@@ -20,6 +20,15 @@ class Solution:
             for j in range(i+1, len(nums)):
                 if nums[j] + n == target:
                     return [i, j]
+                
+    def twotwoSum(self, nums: List[int], target: int) -> List[int]:
+        d = {}
+        for i,num in enumerate(nums):
+            t = target - num
+            if t in d:
+                return d[t]
+            d[num] = i
+
 
 
 if __name__ == "__main__":
